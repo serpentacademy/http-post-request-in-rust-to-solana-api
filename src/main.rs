@@ -1,8 +1,6 @@
 extern crate reqwest;
 use std::error::Error;
 use serde_json::json;
-use std::collections::HashMap;
-use reqwest::StatusCode;
 
 
 #[tokio::main]
@@ -14,7 +12,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
         "id": 1,
         "method": "getAccountInfo",
         "params": [
-            "9m5kFDqgpf7Ckzbox91RYcADqcmvxW4MmuNvroD5H2r9",
+            "F65xgN7bUhaJffKhtFotQsZEgd8DLviWt59qBMA4LfC5",
             {
                 "encoding": "base58"
             }
@@ -24,7 +22,6 @@ async fn main() -> Result<(), Box<dyn Error>> {
 
 
 
-let client = reqwest::Client::new();
 let res = client
     .post("https://api.devnet.solana.com")
     .json(&json_body)
